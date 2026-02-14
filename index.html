@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cássio - Treinos Personalizados</title>
+    <style>
+        /* Reset básico e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #000000; /* Alterado para Preto */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Container Principal */
+        .container {
+            width: 100%;
+            max-width: 580px;
+            text-align: center;
+        }
+
+        /* Foto de Perfil */
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Nome e Bio */
+        h1 {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        /* Estilização dos Links */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-item {
+            background-color: #ffffff;
+            color: #000000; /* Texto do botão alterado para preto para combinar */
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 30px;
+            font-weight: 600; /* Um pouco mais de peso na fonte para leitura */
+            font-size: 16px;
+            transition: transform 0.2s, background-color 0.2s;
+            display: block;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.05); /* Sombra suave clara no fundo preto */
+            line-height: 1.4;
+        }
+
+        /* Efeito ao passar o mouse */
+        .link-item:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.02);
+        }
+
+        /* Rodapé/Logo */
+        .footer-logo {
+            margin-top: 50px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 14px;
+            opacity: 0.8;
+            letter-spacing: 1px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://i.postimg.cc/hhCtqTLH/image.png" alt="Cássio - Treinos Personalizados" class="profile-img">
+        
+        <h1>CM - Treinos Personalizados</h1>
+        <p>Formação em Educação Física e com <strong>CREF ativo</strong></p>
+
+        <div class="links-container">
+            <a href="https://wa.me/5516992279741?text=Gostaria%20de%20montar%20um%20treino." class="link-item" target="_blank">
+                Treinos curtos e intensos para 1h de treino por dia.<br>Vamos montar seu plano? Me chama no WhatsApp!
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
