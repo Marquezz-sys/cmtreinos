@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CM - Treinos Personalizados</title>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/hhCtqTLH/image.png">
+
     <style>
-        /* Reset básico e Fontes */
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -15,22 +16,25 @@
         }
 
         body {
-            background-color: #000000; /* Fundo Preto */
+            background-color: #000000;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
             padding: 40px 20px;
+            overflow-x: hidden; /* Evita barra de rolagem por causa dos emojis */
+            position: relative;
         }
 
-        /* Container Principal */
+        /* Container Principal - Z-index alto para ficar acima dos emojis */
         .container {
             width: 100%;
             max-width: 580px;
             text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
-        /* Foto de Perfil */
         .profile-img {
             width: 96px;
             height: 96px;
@@ -40,27 +44,8 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Nome e Bio */
-        h1 {
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        p {
-            color: #ffffff;
-            font-size: 16px;
-            margin-bottom: 32px;
-            opacity: 0.9;
-        }
-
-        /* Estilização dos Links */
-        .links-container {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+        h1 { color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        p { color: #ffffff; font-size: 16px; margin-bottom: 32px; opacity: 0.9; }
 
         .link-item {
             background-color: #ffffff;
@@ -72,30 +57,65 @@
             font-size: 16px;
             transition: transform 0.2s, background-color 0.2s;
             display: block;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
             line-height: 1.4;
         }
 
-        /* Efeito ao passar o mouse */
         .link-item:hover {
             background-color: #e0e0e0;
             transform: scale(1.02);
         }
 
-        /* Estilização da sua Marca (Footer) */
         .minha-marca {
-            margin-top: 60px; /* Espaçamento abaixo do botão */
-            color: #ffffff;   /* Cor base branca */
-            opacity: 0.3;     /* Efeito cinza transparente */
+            margin-top: 60px;
+            color: #ffffff;
+            opacity: 0.3;
             font-size: 12px;
             font-weight: bold;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
+        /* --- ANIMAÇÃO DOS EMOJIS --- */
+        .emoji-bg {
+            position: fixed;
+            font-size: 2rem;
+            user-select: none;
+            z-index: 1;
+            opacity: 0.5;
+            animation: shake 0.5s ease-in-out infinite alternate, float 3s ease-in-out infinite alternate;
+        }
+
+        /* Efeito de vibração (Shake) */
+        @keyframes shake {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+
+        /* Efeito de flutuação (Sobe e desce) */
+        @keyframes float {
+            0% { margin-top: 0px; }
+            100% { margin-top: 15px; }
+        }
+
+        /* Posições variadas para os braços */
+        .e1 { top: 10%; left: 10%; animation-delay: 0s; }
+        .e2 { top: 20%; right: 15%; animation-delay: 0.2s; }
+        .e3 { bottom: 20%; left: 15%; animation-delay: 0.4s; }
+        .e4 { bottom: 10%; right: 10%; animation-delay: 0.6s; }
+        .e5 { top: 50%; left: 5%; animation-delay: 0.8s; font-size: 1.5rem; }
+        .e6 { top: 60%; right: 5%; animation-delay: 1s; font-size: 1.8rem; }
+
     </style>
 </head>
 <body>
+    <div class="emoji-bg e1">💪</div>
+    <div class="emoji-bg e2">💪</div>
+    <div class="emoji-bg e3">💪</div>
+    <div class="emoji-bg e4">💪</div>
+    <div class="emoji-bg e5">💪</div>
+    <div class="emoji-bg e6">💪</div>
+    <div class="emoji-bg e7">💪</div>
 
     <div class="container">
         <img src="https://i.postimg.cc/hhCtqTLH/image.png" alt="Cássio - Treinos Personalizados" class="profile-img">
