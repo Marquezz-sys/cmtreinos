@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #000000; /* Alterado para Preto */
+            background-color: #000000; /* Fundo Preto */
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -63,15 +63,15 @@
 
         .link-item {
             background-color: #ffffff;
-            color: #000000; /* Texto do botão alterado para preto para combinar */
+            color: #000000;
             text-decoration: none;
             padding: 18px 20px;
             border-radius: 30px;
-            font-weight: 600; /* Um pouco mais de peso na fonte para leitura */
+            font-weight: 600;
             font-size: 16px;
             transition: transform 0.2s, background-color 0.2s;
             display: block;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.05); /* Sombra suave clara no fundo preto */
+            box-shadow: 0 4px 15px rgba(255,255,255,0.05);
             line-height: 1.4;
         }
 
@@ -81,14 +81,15 @@
             transform: scale(1.02);
         }
 
-        /* Rodapé/Logo */
-        .footer-logo {
-            margin-top: 50px;
-            color: #ffffff;
+        /* Estilização da sua Marca (Footer) */
+        .minha-marca {
+            margin-top: 60px; /* Espaçamento abaixo do botão */
+            color: #ffffff;   /* Cor base branca */
+            opacity: 0.3;     /* Efeito cinza transparente */
+            font-size: 12px;
             font-weight: bold;
-            font-size: 14px;
-            opacity: 0.8;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
     </style>
@@ -107,6 +108,9 @@
             </a>
         </div>
 
+        <footer class="minha-marca">
+            Desenvolvido Por Marquezz-Sys<br>(Nícolas Marques)
+        </footer>
     </div>
 
 </body>
