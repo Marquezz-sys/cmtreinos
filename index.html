@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CM - Treinos Personalizados</title>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/hhCtqTLH/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
         * {
@@ -33,118 +34,128 @@
         }
 
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 115px;
+            height: 115px;
             border-radius: 50%;
             margin-bottom: 16px;
             object-fit: cover;
             border: 3px solid #ffffff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
             animation: pulse-glow 2s infinite;
         }
 
         @keyframes pulse-glow {
             0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
-            50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
             100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
         }
 
-        h1 { color: #ffffff; font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
-        .cref { color: #ffffff; font-size: 14px; margin-bottom: 24px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+        h1 { color: #ffffff; font-size: 26px; font-weight: 800; margin-bottom: 8px; letter-spacing: -1px; }
+        .cref { color: #ffffff; font-size: 13px; margin-bottom: 24px; opacity: 0.6; text-transform: uppercase; letter-spacing: 2px; }
 
         .features {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 32px;
         }
 
         .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px 5px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            padding: 15px 5px;
+            border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
-        .feature-item span { color: #ffffff; font-size: 11px; font-weight: 600; display: block; margin-top: 5px; }
+        .feature-item span { color: #ffffff; font-size: 10px; font-weight: 700; display: block; margin-top: 8px; text-transform: uppercase; }
 
-        .wp-icon-small { width: 22px; height: 22px; object-fit: contain; }
-
-        /* AJUSTE AQUI: Adicionado margin-bottom para separar os botões */
         .link-item {
             background-color: #ffffff;
             color: #000000;
             text-decoration: none;
             padding: 20px;
-            border-radius: 15px;
-            font-weight: 700;
+            border-radius: 18px;
+            font-weight: 800;
             font-size: 16px;
             display: block;
-            line-height: 1.4;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
-            animation: button-pulse 3s infinite;
-            margin-bottom: 15px; /* DISTÂNCIA ENTRE OS BOTÕES */
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 16px;
+            animation: button-pulse 4s infinite;
         }
 
         @keyframes button-pulse {
             0% { transform: scale(1); }
-            5% { transform: scale(1.03); }
-            10% { transform: scale(1); }
+            2% { transform: scale(1.05); }
+            4% { transform: scale(1); }
         }
 
-        .link-item:hover { background-color: #f0f0f0; transform: translateY(-3px); }
+        .link-item:hover { transform: scale(1.02); background-color: #f8f8f8; }
 
         .minha-marca {
             margin-top: 40px;
             color: #ffffff;
-            opacity: 0.2;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            opacity: 0.5;
+            font-size: 11px;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 1px;
         }
 
-        /* Emojis de fundo */
-        .emoji-bg { position: fixed; font-size: 1.8rem; z-index: 1; opacity: 0.3; pointer-events: none; animation: float 4s infinite alternate ease-in-out; }
-        @keyframes float { from { transform: translateY(0); rotate: -10deg; } to { transform: translateY(20px); rotate: 10deg; } }
-        .e1 { top: 10%; left: 5%; }
-        .e2 { top: 50%; right: 5%; animation-delay: 1s; }
-        .e3 { bottom: 10%; left: 10%; animation-delay: 2s; }
+        /* Estilo para Redes Sociais do Desenvolvedor */
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 18px;
+            opacity: 0.4;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icon:hover { opacity: 1; transform: translateY(-3px); color: #E1306C; }
+
+        /* Emojis de fundo animado */
+        .emoji-bg { position: fixed; font-size: 2rem; z-index: 1; opacity: 0.15; pointer-events: none; animation: float 6s infinite alternate ease-in-out; }
+        @keyframes float { from { transform: translate(0,0) rotate(-10deg); } to { transform: translate(10px, 30px) rotate(10deg); } }
+        .e1 { top: 15%; left: 8%; }
+        .e2 { top: 45%; right: 8%; animation-delay: 2s; }
+        .e3 { bottom: 15%; left: 12%; animation-delay: 4s; }
 
         @media (max-width: 480px) {
             .features { grid-template-columns: 1fr; }
-            h1 { font-size: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="emoji-bg e1">💪</div>
-    <div class="emoji-bg e2">🏋️‍♂️</div>
-    <div class="emoji-bg e3">🦵</div>
+    <div class="emoji-bg e1">🔥</div>
+    <div class="emoji-bg e2">💪</div>
+    <div class="emoji-bg e3">🏋️</div>
 
     <div class="container">
         <img src="https://i.postimg.cc/hhCtqTLH/image.png" alt="Cássio" class="profile-img">
         
         <h1>CM - Treinos Personalizados</h1>
-        <p class="cref"> Educação Física | <strong>CREF ATIVO</strong></p>
+        <p class="cref">Educação Física | <strong>CREF ATIVO</strong></p>
 
         <div class="features">
             <div class="feature-item">
-                <div style="font-size: 20px;">⏱️</div>
-                <span>Treinos de 1h<br>(ou até menos)</span>
+                <div style="font-size: 22px;">⏱️</div>
+                <span>Treinos <br> de 1 Hora</span>
             </div>
             <div class="feature-item">
-                <div style="font-size: 20px;">📈</div>
-                <span>Evolução Real</span>
+                <div style="font-size: 22px;">📈</div>
+                <span>Resultados <br> Reais</span>
             </div>
             <div class="feature-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wp-icon-small">
-                <span>Treinos via WhatsApp</span>
+                <div style="font-size: 22px;">🥇</div>
+                <span>Foco em <br> Performance</span>
             </div>
         </div>
 
@@ -153,14 +164,22 @@
             <span style="font-size: 11px; font-weight: 400; opacity: 0.7;">Fale com o Cássio no WhatsApp</span>
         </a>
 
-        <a href="https://wa.me/5516992053079?text=Quero%20ter%20um%20site%20personalizado!" class="link-item" target="_blank">
-            QUERO UM SITE PERSONALIZADO<br>
-            <span style="font-size: 11px; font-weight: 400; opacity: 0.7;">Fale com o desenvolvedor (Marquezz-Sys)</span>
+        <a href="https://wa.me/5516992053079?text=Quero%20ter%20um%20site%20personalizado!" class="link-item" style="background: transparent; border: 1px solid white; color: white;">
+            QUERO UM SITE COMO ESTE<br>
+            <span style="font-size: 11px; font-weight: 400; opacity: 0.7;">Fale com o desenvolvedor</span>
         </a>
 
-        <footer class="minha-marca">
-            <strong>Desenvolvido Por Marquezz-Sys<br>(NÍCOLAS MARQUES)</strong>
-        </footer>
+        <div class="footer-dev">
+            <a href="https://wa.me/5516992053079" class="minha-marca" target="_blank">
+                <strong>MARQUEZZ-SYS</strong><br>
+                <small>Nícolas Marques</small>
+            </a>
+            <div class="social-links">
+                <a href="https://www.instagram.com/the.marquezzz/" class="social-icon" target="_blank" title="Instagram do Desenvolvedor">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
     </div>
 
 </body>
