@@ -101,7 +101,7 @@
         .minha-marca {
             margin-top: 40px;
             color: #ffffff;
-            opacity: 0.5;
+            opacity: 0.7; /* Aumentei um pouco a visibilidade da sua marca também */
             font-size: 11px;
             text-decoration: none;
             display: inline-block;
@@ -118,21 +118,34 @@
         .social-icon {
             color: white;
             font-size: 18px;
-            opacity: 0.4;
+            opacity: 0.6;
             transition: 0.3s;
             text-decoration: none;
         }
 
         .social-icon:hover { opacity: 1; transform: translateY(-3px); color: #E1306C; }
 
-        .emoji-bg { position: fixed; font-size: 2rem; z-index: 1; opacity: 0.15; pointer-events: none; animation: float 6s infinite alternate ease-in-out; }
-        @keyframes float { from { transform: translate(0,0) rotate(-10deg); } to { transform: translate(10px, 30px) rotate(10deg); } }
-        .e1 { top: 15%; left: 8%; }
-        .e2 { top: 45%; right: 8%; animation-delay: 2s; }
-        .e3 { bottom: 15%; left: 12%; animation-delay: 4s; }
+        /* AJUSTE DOS EMOJIS FLUTUANTES */
+        .emoji-bg { 
+            position: fixed; 
+            z-index: 1; 
+            opacity: 0.6; /* OPACIDADE MAIOR PARA FICAREM MAIS CLAROS/VISÍVEIS */
+            pointer-events: none; 
+            animation: float 6s infinite alternate ease-in-out; 
+        }
+
+        @keyframes float { 
+            from { transform: translate(0,0) rotate(-10deg); } 
+            to { transform: translate(15px, 35px) rotate(10deg); } 
+        }
+
+        .e1 { top: 15%; left: 8%; font-size: 2.5rem; }
+        .e2 { top: 45%; right: 8%; font-size: 2.2rem; animation-delay: 2s; }
+        .e3 { bottom: 15%; left: 12%; font-size: 2.8rem; animation-delay: 4s; }
 
         @media (max-width: 480px) {
             .features { grid-template-columns: 1fr; }
+            .emoji-bg { opacity: 0.4; } /* No mobile, baixamos um pouco para não poluir telas pequenas */
         }
     </style>
 </head>
@@ -151,7 +164,7 @@
         <div class="features">
             <div class="feature-item">
                 <div style="font-size: 22px;">⏱️</div>
-                <span>Treino de 1h<br>(ou até menos)</span>
+                <span>Treinos de 1h<br>(ou até menos)</span>
             </div>
             <div class="feature-item">
                 <div style="font-size: 22px;">📈</div>
@@ -176,7 +189,7 @@
         <div class="footer-dev">
             <a href="https://wa.me/5516992053079" class="minha-marca" target="_blank">
                 <strong>MARQUEZZ-SYS</strong><br>
-                <small>(Nícolas Marques)</small>
+                <small>Nícolas Marques</small>
             </a>
             <div class="social-links">
                 <a href="https://www.instagram.com/nick.dlz7/" class="social-icon" target="_blank" title="Instagram do Desenvolvedor">
