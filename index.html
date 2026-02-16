@@ -66,9 +66,15 @@
             padding: 15px 5px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .feature-item span { color: #ffffff; font-size: 10px; font-weight: 700; display: block; margin-top: 8px; text-transform: uppercase; }
+
+        .wp-icon-small { width: 22px; height: 22px; object-fit: contain; }
 
         .link-item {
             background-color: #ffffff;
@@ -102,7 +108,6 @@
             letter-spacing: 1px;
         }
 
-        /* Estilo para Redes Sociais do Desenvolvedor */
         .social-links {
             margin-top: 15px;
             display: flex;
@@ -120,7 +125,6 @@
 
         .social-icon:hover { opacity: 1; transform: translateY(-3px); color: #E1306C; }
 
-        /* Emojis de fundo animado */
         .emoji-bg { position: fixed; font-size: 2rem; z-index: 1; opacity: 0.15; pointer-events: none; animation: float 6s infinite alternate ease-in-out; }
         @keyframes float { from { transform: translate(0,0) rotate(-10deg); } to { transform: translate(10px, 30px) rotate(10deg); } }
         .e1 { top: 15%; left: 8%; }
@@ -147,15 +151,15 @@
         <div class="features">
             <div class="feature-item">
                 <div style="font-size: 22px;">⏱️</div>
-                <span>Treinos <br> de 1 Hora</span>
+                <span>Treinos de 1h<br>(ou até menos)</span>
             </div>
             <div class="feature-item">
                 <div style="font-size: 22px;">📈</div>
                 <span>Resultados <br> Reais</span>
             </div>
             <div class="feature-item">
-                <div style="font-size: 22px;">🥇</div>
-                <span>Foco em <br> Performance</span>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wp-icon-small">
+                <span>Treinos via <br> WhatsApp</span>
             </div>
         </div>
 
