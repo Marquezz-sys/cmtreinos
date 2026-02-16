@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CM - Treinos Personalizados</title>
     <link rel="icon" type="image/png" href="https://i.postimg.cc/hhCtqTLH/image.png">
-    
+
     <style>
-        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
@@ -22,122 +21,145 @@
             align-items: flex-start;
             min-height: 100vh;
             padding: 40px 20px;
-            overflow-x: hidden; 
+            overflow-x: hidden;
             position: relative;
         }
 
-        /* Container Principal */
         .container {
             width: 100%;
-            max-width: 580px;
+            max-width: 500px;
             text-align: center;
-            position: relative;
             z-index: 10;
         }
 
         .profile-img {
-            width: 96px;
-            height: 96px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             margin-bottom: 16px;
             object-fit: cover;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: pulse-glow 2s infinite;
         }
 
-        h1 { color: #ffffff; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-        p { color: #ffffff; font-size: 16px; margin-bottom: 32px; opacity: 0.9; }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+        }
 
+        h1 { color: #ffffff; font-size: 24px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .cref { color: #ffffff; font-size: 14px; margin-bottom: 24px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-item span { color: #ffffff; font-size: 11px; font-weight: 600; display: block; margin-top: 5px; }
+
+        .wp-icon-small { width: 22px; height: 22px; object-fit: contain; }
+
+        /* AJUSTE AQUI: Adicionado margin-bottom para separar os botões */
         .link-item {
             background-color: #ffffff;
             color: #000000;
             text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 30px;
-            font-weight: 600;
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 700;
             font-size: 16px;
-            transition: transform 0.2s, background-color 0.2s;
             display: block;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
             line-height: 1.4;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+            animation: button-pulse 3s infinite;
+            margin-bottom: 15px; /* DISTÂNCIA ENTRE OS BOTÕES */
         }
 
-        .link-item:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.02);
+        @keyframes button-pulse {
+            0% { transform: scale(1); }
+            5% { transform: scale(1.03); }
+            10% { transform: scale(1); }
         }
+
+        .link-item:hover { background-color: #f0f0f0; transform: translateY(-3px); }
 
         .minha-marca {
-            margin-top: 60px;
+            margin-top: 40px;
             color: #ffffff;
-            opacity: 0.3;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 2px;
+            opacity: 0.2;
+            font-size: 10px;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        /* --- ANIMAÇÃO DOS EMOJIS --- */
-        .emoji-bg {
-            position: fixed;
-            font-size: 2rem;
-            user-select: none;
-            z-index: 1;
-            opacity: 0.4;
-            animation: shake 0.5s ease-in-out infinite alternate, float 3s ease-in-out infinite alternate;
+        /* Emojis de fundo */
+        .emoji-bg { position: fixed; font-size: 1.8rem; z-index: 1; opacity: 0.3; pointer-events: none; animation: float 4s infinite alternate ease-in-out; }
+        @keyframes float { from { transform: translateY(0); rotate: -10deg; } to { transform: translateY(20px); rotate: 10deg; } }
+        .e1 { top: 10%; left: 5%; }
+        .e2 { top: 50%; right: 5%; animation-delay: 1s; }
+        .e3 { bottom: 10%; left: 10%; animation-delay: 2s; }
+
+        @media (max-width: 480px) {
+            .features { grid-template-columns: 1fr; }
+            h1 { font-size: 20px; }
         }
-
-        @keyframes shake {
-            0% { transform: rotate(-8deg); }
-            100% { transform: rotate(8deg); }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(15px); }
-        }
-
-        /* Posições variadas para alternar Braço, Perna e Peso */
-        .e1 { top: 8%; left: 8%; animation-delay: 0s; }
-        .e2 { top: 15%; right: 10%; animation-delay: 0.3s; }
-        .e3 { top: 40%; left: 5%; animation-delay: 0.6s; font-size: 1.5rem; }
-        .e4 { top: 45%; right: 7%; animation-delay: 0.9s; font-size: 1.8rem; }
-        .e5 { bottom: 25%; left: 12%; animation-delay: 1.2s; }
-        .e6 { bottom: 15%; right: 15%; animation-delay: 1.5s; }
-        .e7 { bottom: 5%; left: 30%; animation-delay: 1.8s; font-size: 1.4rem; }
-        /* Novos espaços para o Peso */
-        .e8 { top: 70%; left: 10%; animation-delay: 0.5s; }
-        .e9 { top: 30%; right: 25%; animation-delay: 0.7s; font-size: 1.6rem; }
-        .e10 { bottom: 10%; right: 40%; animation-delay: 1.1s; }
-
     </style>
 </head>
 <body>
 
     <div class="emoji-bg e1">💪</div>
-    <div class="emoji-bg e2">🦵</div>
-    <div class="emoji-bg e3">💪</div>
-    <div class="emoji-bg e4">🦵</div>
-    <div class="emoji-bg e5">🦵</div>
-    <div class="emoji-bg e6">💪</div>
-    <div class="emoji-bg e7">💪</div>
-    <div class="emoji-bg e11">🏋️‍♂️</div>
-    <div class="emoji-bg e9">🏋️‍♂️</div>
-    <div class="emoji-bg e10">🏋️‍♂️</div>
+    <div class="emoji-bg e2">🏋️‍♂️</div>
+    <div class="emoji-bg e3">🦵</div>
 
     <div class="container">
-        <img src="https://i.postimg.cc/hhCtqTLH/image.png" alt="Cássio - Treinos Personalizados" class="profile-img">
+        <img src="https://i.postimg.cc/hhCtqTLH/image.png" alt="Cássio" class="profile-img">
         
         <h1>CM - Treinos Personalizados</h1>
-        <p>Formação em Educação Física e com <strong>CREF ativo</strong></p>
+        <p class="cref"> Educação Física | <strong>CREF ATIVO</strong></p>
 
-        <div class="links-container">
-            <a href="https://wa.me/5516992279741?text=Gostaria%20de%20montar%20um%20treino." class="link-item" target="_blank">
-                Treinos curtos e intensos para 1h de treino por dia.<br>Vamos montar seu plano? Me chama no WhatsApp!
-            </a>
+        <div class="features">
+            <div class="feature-item">
+                <div style="font-size: 20px;">⏱️</div>
+                <span>Treinos de 1h<br>(ou até menos)</span>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 20px;">📈</div>
+                <span>Evolução Real</span>
+            </div>
+            <div class="feature-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wp-icon-small">
+                <span>Treinos via WhatsApp</span>
+            </div>
         </div>
 
+        <a href="https://wa.me/5516992279741?text=Quero%20conhecer%20os%20planos%20de%20treino!" class="link-item" target="_blank">
+            QUERO MEU PLANO PERSONALIZADO<br>
+            <span style="font-size: 11px; font-weight: 400; opacity: 0.7;">Fale com o Cássio no WhatsApp</span>
+        </a>
+
+        <a href="https://wa.me/5516992053079?text=Quero%20ter%20um%20site%20personalizado!" class="link-item" target="_blank">
+            QUERO UM SITE PERSONALIZADO<br>
+            <span style="font-size: 11px; font-weight: 400; opacity: 0.7;">Fale com o desenvolvedor (Marquezz-Sys)</span>
+        </a>
+
         <footer class="minha-marca">
-            Desenvolvido Por Marquezz-Sys<br>(Nícolas Marques)
+            <strong>Desenvolvido Por Marquezz-Sys<br>(NÍCOLAS MARQUES)</strong>
         </footer>
     </div>
 
